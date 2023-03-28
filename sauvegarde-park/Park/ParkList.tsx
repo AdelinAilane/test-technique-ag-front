@@ -1,10 +1,9 @@
 import * as React from 'react';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import {FC, useContext, useEffect, useState} from "react";
+import {FC, useEffect, useState} from "react";
 import {getParks} from "../../core/services/park.api.service";
 import {Park} from "../../core/model/Park";
 import {ElectricityOrigin} from "../../core/enum/electricity-origin.enum";
-import {ParkListContext} from "./ParkListContext";
 
 const columns: GridColDef[] = [
     { field: 'parkId', headerName: 'ID', type: 'number', width: 70 },
@@ -24,7 +23,7 @@ const rows = [
     { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
 ];
 
-export type ParkFilters = { electricityOrigin?: ElectricityOrigin }
+export type  ParkFilters = { electricityOrigin?: ElectricityOrigin }
 
 export type ParkListOptions = {page: number, filter: ParkFilters};
 
@@ -34,11 +33,6 @@ interface ParkListProps {
 }
 
 const ParkList: FC<ParkListProps>= ({pageListOptions, setPageListOptions}) => {
-
-    console.log('parkList render');
-
-    const { parkList } = useContext(ParkListContext);
-    /*
     const fetchParks = async () => {
         const parkList = await getParks();
         console.log('parkList', parkList);
@@ -52,13 +46,10 @@ const ParkList: FC<ParkListProps>= ({pageListOptions, setPageListOptions}) => {
 
         fetchParks();
     }, [pageListOptions]);
-    */
-    console.log('parkList - value from context ', parkList());
-
     return (
         <div style={{ height: 800, width: '100%' }}>
             <DataGrid
-                rows={parkList()}
+                rows={parks}
                 columns={columns}
                 pageSizeOptions={[100]}
                 getRowId={park => park.parkId}
