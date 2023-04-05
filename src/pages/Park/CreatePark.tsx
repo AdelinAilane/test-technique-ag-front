@@ -4,9 +4,12 @@ import {BoxContainer} from "./CreatParkStyle";
 import {Controller, useForm} from "react-hook-form";
 import {ElectricityOrigin} from "../../core/enum/electricity-origin.enum";
 import {createPark} from "../../core/services/park.api.service";
+import * as React from "react";
+import {ParkListOptions} from "./ParkList";
+import Typography from "@mui/material/Typography";
 
 interface CreateParkProps {
-    setPageListOptions: (pageList: { page: number, filter: { electricityOrigin: ElectricityOrigin }}) => void
+    setPageListOptions: React.Dispatch<React.SetStateAction<ParkListOptions>>
 }
 
 const CreatePark: FC<CreateParkProps>= ({setPageListOptions}) => {
@@ -37,7 +40,8 @@ const CreatePark: FC<CreateParkProps>= ({setPageListOptions}) => {
         const createParkAsync = async (name: string, origin: string) => {
             const parkCreationResponse = await createPark(name, origin);
             handleClose();
-            setPageListOptions( {page: 0, filter: { electricityOrigin: ElectricityOrigin.WIND }});
+            setPageListOptions( (prev) => ({...prev, ...{ page: 0 }}));
+
             console.log('parkCreationResponse', parkCreationResponse);
         };
         createParkAsync(data.name, data.origin);
@@ -52,6 +56,7 @@ const CreatePark: FC<CreateParkProps>= ({setPageListOptions}) => {
             onClose={handleClose}
             sx={{}} >
             <BoxContainer>
+                <Typography textAlign="center" variant="h3">Ajouter une parc producteur d'electricité</Typography>
 
                 <Box component="form" onSubmit={handleSubmit(handleSubmitPark)}>
                     <Grid container spacing={2}>

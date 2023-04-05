@@ -2,6 +2,7 @@ import {Navigate, useRoutes} from "react-router-dom";
 import Home from "../../pages/Home/home";
 import ParkManagement from "../../pages/Park/ParkManagement";
 import NotFound from "../../pages/NotFound/NotFound";
+import OfferManagement from "../../pages/Offer/OfferManagement";
 
 const AppRoutes = () => {
     const routes = useRoutes([
@@ -15,6 +16,10 @@ const AppRoutes = () => {
                 {
                     path: "parks",
                     element: <ParkManagement />,
+                },
+                {
+                    path: "offers",
+                    element: <OfferManagement />,
                 },
             ],
         },

@@ -1,9 +1,10 @@
 import axiosInstance from "./base.api.service";
 import {Park} from "../model/Park";
+import {IParkListOptions} from "../../state/parkSlice";
+import {PaginatedQueryResult} from "../model/paginatedQueryResult";
 
-
-const getParks = async (): Promise<Park[]> => {
-    const response = await axiosInstance.get('/park/SOLAR');
+const getParks = async (options: IParkListOptions): Promise<PaginatedQueryResult<Park>> => {
+    const response = await axiosInstance.get( `park/${options.electricityOrigin}`, { params: { page: options.page, limit: options.limit }} );
     console.log('response', response);
     return response.data;
 }
@@ -16,7 +17,6 @@ const createPark = async (name: string, origin: string) => {
     });
     return response.data;
 }
-
 
 export {
     getParks, createPark

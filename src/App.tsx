@@ -8,7 +8,7 @@ import {BrowserRouter, createBrowserRouter} from "react-router-dom";
 import AppRoutes from "./core/routes/Routes";
 
 function App() {
-  const pageTitle = 'pageTitle';
+  const pageTitle = '';
 //  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
