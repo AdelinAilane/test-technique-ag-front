@@ -1,22 +1,11 @@
 import * as React from 'react';
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import {FC, useContext, useEffect, useState} from "react";
-import {getParks} from "../../core/services/park.api.service";
-import {Park} from "../../core/model/Park";
+import { FC } from "react";
 import {ElectricityOrigin} from "../../core/enum/electricity-origin.enum";
-import {ParkListContext} from "./ParkListContext";
 import {useSelector} from "react-redux";
 import {parkListSelector} from "../../state/parkSlice";
 import {SeeMoreButton} from "./ParkListStyle";
 import {Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
-import AddTimeBlockToOffer from "../Offer/AddTimeBlockToOffer";
 import CreateTimeBlock from "./CreateTimeBlock";
-
-const columns: GridColDef[] = [
-    { field: 'parkId', headerName: 'ID', type: 'number', width: 70 },
-    { field: 'electricityOrigin', headerName: 'Origine de la production électrique', width: 300 },
-    { field: 'name', headerName: 'Nom', minWidth: 130 },
-];
 
 export type ParkFilters = { electricityOrigin: ElectricityOrigin }
 
@@ -28,21 +17,6 @@ interface ParkListProps {
 }
 const ParkList: FC<ParkListProps>= ({pageListOptions, setPageListOptions}) => {
     const { loading, parkList, total } = useSelector(parkListSelector);
-    /*
-    const fetchParks = async () => {
-        const parkList = await getParks();
-        console.log('parkList', parkList);
-        setParks( parkList);
-    };
-
-    const [parks, setParks] = useState([] as Park[]);
-
-    useEffect(() => {
-        console.log('useEffect fetchParks');
-
-        fetchParks();
-    }, [pageListOptions]);
-    */
 
     const seeMore = () => {
         setPageListOptions({

@@ -16,23 +16,12 @@ const CreatePark: FC<CreateParkProps>= ({setPageListOptions}) => {
 
     const [open, setOpen] = useState(false);
     const handleClose = () => {
-        console.log('handleClose');
         setOpen(false);
     }
 
-    const { register, handleSubmit, control } = useForm();
+    const { handleSubmit, control } = useForm();
     const [data, setData] = useState<any>("");
 
-
-    //const onTextChange = (e: any) => setTextValue(e.target.value);
-
-    /*
-    const { fields, append, remove } = useFieldArray<IParkCreationForm>({
-        control,
-        name: 'blocks' as never,
-    });
-
-    */
 
     const handleSubmitPark = (data: any) => {
         console.log('handleSubmitPark', data);
@@ -41,8 +30,6 @@ const CreatePark: FC<CreateParkProps>= ({setPageListOptions}) => {
             const parkCreationResponse = await createPark(name, origin);
             handleClose();
             setPageListOptions( (prev) => ({...prev, ...{ page: 0 }}));
-
-            console.log('parkCreationResponse', parkCreationResponse);
         };
         createParkAsync(data.name, data.origin);
     };
@@ -97,15 +84,6 @@ const CreatePark: FC<CreateParkProps>= ({setPageListOptions}) => {
                         </Grid>
                     </Grid>
 
-                    {/*} <input {...register("firstName")} placeholder="First name" />
-
-                    <select {...register("category", { required: true })}>
-                        <option value="">Select...</option>
-                        <option value="A">Option A</option>
-                        <option value="B">Option B</option>
-                    </select>
-                    <textarea {...register("aboutYou")} placeholder="About you" />
-                    */}
                     <p>{data}</p>
                     <Button  type="submit"  variant="contained" onClick={() => setOpen(true)}>Ajouter un parc producteur d'électricité</Button>
 
@@ -116,8 +94,6 @@ const CreatePark: FC<CreateParkProps>= ({setPageListOptions}) => {
         </Modal>)}
     </>);
 
-
-    //  return <ModalUnstyled>{/* the modal's content */}</ModalUnstyled>;
 };
 
 export default CreatePark;

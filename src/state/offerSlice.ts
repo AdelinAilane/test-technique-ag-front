@@ -1,6 +1,5 @@
 import {Offer} from "../core/model/Offer";
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
-import {ElectricityOrigin} from "../core/enum/electricity-origin.enum";
 import {RequestStatusEnum} from "../core/enum/state-enum";
 import { RootState } from './rootReducer';
 import {getOffers} from "../core/services/offer.api.service";
@@ -31,7 +30,6 @@ export const fetchOfferListThunk = createAsyncThunk(
     'offer/fetchOfferListThunk',
     async (options: IOfferListOptions,
            { rejectWithValue, dispatch }) => {
-        console.log('getOffers',  options);
 
         const offerPaginatedList: PaginatedQueryResult<Offer> = await getOffers(options);
         return offerPaginatedList ;

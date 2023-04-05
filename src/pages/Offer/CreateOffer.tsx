@@ -95,8 +95,6 @@ const CreateOffer: FC<CreateOfferProps>= ({setPageListOptions}) => {
         </Modal>)}
     </>);
 
-
-    //  return <ModalUnstyled>{/* the modal's content */}</ModalUnstyled>;
 };
 
 export default CreateOffer;

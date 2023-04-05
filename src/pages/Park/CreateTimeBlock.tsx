@@ -1,27 +1,19 @@
-import {FC, useEffect, useState} from "react";
+import {useState} from "react";
 import {
     Box,
     Button,
-    FormControl,
     Grid,
-    InputLabel,
-    MenuItem,
-    Modal, Paper,
-    Select, Table, TableBody, TableCell,
-    TableContainer, TableHead, TableRow,
+    Modal,
     TextField
 } from '@mui/material';
-import {addTimeBlockToOffer, createOffer} from "../../core/services/offer.api.service";
 import {createTimeBlockForPark, getTimeBlocks} from "../../core/services/time-block.api.service";
 import * as React from "react";
 import IconButton from "@mui/material/IconButton";
-import AddIcon from '@mui/icons-material/Add';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import Typography from "@mui/material/Typography";
 import {Controller, useForm} from "react-hook-form";
-import {MarketType} from "../../core/enum/market-type.enum";
 import {BoxContainer} from "./CreatParkStyle";
-import {DatePicker, DateTimePicker, LocalizationProvider} from "@mui/x-date-pickers";
+import {DateTimePicker, LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDateFns} from "@mui/x-date-pickers/AdapterDateFns";
 import frLocale from 'date-fns/locale/fr';
 
@@ -36,12 +28,10 @@ const CreateTimeBlock = ({ parkId }: { parkId: number }) => {
 
     const [open, setOpen] = useState(false);
     const handleClose = () => {
-        console.log('handleClose');
         setOpen(false);
     }
 
-    const { register,
-        handleSubmit,
+    const { handleSubmit,
         control,
         trigger,
     } = useForm(
@@ -155,8 +145,6 @@ const CreateTimeBlock = ({ parkId }: { parkId: number }) => {
         </Modal>)}
     </>);
 
-
-    //  return <ModalUnstyled>{/* the modal's content */}</ModalUnstyled>;
 };
 
 export default CreateTimeBlock;

@@ -116,8 +116,6 @@ const AddTimeBlockToOffer = ({ offerId, setPageListOptions}: AddTimeBlockToOffer
         </Modal>)}
     </>);
 
-
-    //  return <ModalUnstyled>{/* the modal's content */}</ModalUnstyled>;
 };
 
 export default AddTimeBlockToOffer;

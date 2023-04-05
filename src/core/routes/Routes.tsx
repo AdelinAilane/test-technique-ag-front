@@ -25,7 +25,6 @@ const AppRoutes = () => {
         },
         { path: '/notFound', element: <NotFound /> },
         { path: '*', element: <Navigate to="/notFound" replace /> },
-        // { path: "team", element: <AboutPage /> },
     ]);
     return routes;
 }

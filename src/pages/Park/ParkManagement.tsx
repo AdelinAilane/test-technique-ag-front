@@ -6,9 +6,6 @@ import {Box, MenuItem, Select, SelectChangeEvent, Stack} from "@mui/material";
 import {ElectricityOrigin} from "../../core/enum/electricity-origin.enum";
 import {fetchParkListThunk, parkListSelector} from "../../state/parkSlice";
 import {useAppDispatch} from "../../state/store";
-import {useSelector} from "react-redux";
-import {MarketType} from "../../core/enum/market-type.enum";
-import CreateOffer from "../Offer/CreateOffer";
 
 
 const ParkManagement : FC<any> = () => {
@@ -18,15 +15,14 @@ const ParkManagement : FC<any> = () => {
 
     useEffect(() => {
 
-        const fetchParksRedux = async () => {
-            console.log('fetchParksRedux', pageListOptions);
+        const fetchParksAsync = async () => {
+            console.log('fetchParksAsync', pageListOptions);
 
             const params = {electricityOrigin: pageListOptions.filter.electricityOrigin, page: pageListOptions.page, limit: 2};
             await dispatch(fetchParkListThunk(params));
         };
 
-       // fetchParks();
-        fetchParksRedux();
+        fetchParksAsync();
 
     }, [pageListOptions]);
 
