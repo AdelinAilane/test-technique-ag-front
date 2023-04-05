@@ -1,7 +1,7 @@
 import {createContext, FC, useEffect, useState} from "react";
 import Typography from "@mui/material/Typography";
-import ParkList, {ParkListOptions} from "./ParkList";
-import CreatePark from "./CreatePark";
+import ParkList, {ParkListOptions} from "./ParkList/ParkList";
+import CreatePark from "./CreatePark/CreatePark";
 import {Box, MenuItem, Select, SelectChangeEvent, Stack} from "@mui/material";
 import {ElectricityOrigin} from "../../core/enum/electricity-origin.enum";
 import {fetchParkListThunk, parkListSelector} from "../../state/parkSlice";

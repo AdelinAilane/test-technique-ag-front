@@ -1,6 +1,6 @@
 import {FC, useState} from "react";
 import {Box, Button, FormControl, Grid, InputLabel, MenuItem, Modal, Select, TextField} from '@mui/material';
-import {BoxContainer} from "./CreatParkStyle";
+import {BoxContainer} from "./CreateParkStyle";
 import {Controller, useForm} from "react-hook-form";
 import {ElectricityOrigin} from "../../core/enum/electricity-origin.enum";
 import {createPark} from "../../core/services/park.api.service";

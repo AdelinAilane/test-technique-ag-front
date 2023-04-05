@@ -2,7 +2,7 @@ import * as React from 'react';
 import {FC} from "react";
 
 import {useSelector} from "react-redux";
-import {offerListSelector} from "../../state/offerSlice";
+import {offerListSelector} from "../../../state/offerSlice";
 import {Header, SeeMoreButton} from "./OfferListStyle";
 import {
     Box,
@@ -16,12 +16,12 @@ import {
     TableHead,
     TableRow
 } from "@mui/material";
-import AddTimeBlockToOffer from "./AddTimeBlockToOffer";
+import AddTimeBlockToOffer from "../AddTimeBlockToOffer/AddTimeBlockToOffer";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import {MarketType} from "../../core/enum/market-type.enum";
+import {MarketType} from "../../../core/enum/market-type.enum";
 
 export type OfferFilters = { marketType?: MarketType }
 

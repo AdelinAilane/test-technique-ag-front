@@ -6,16 +6,16 @@ import {
     Modal,
     TextField
 } from '@mui/material';
-import {createTimeBlockForPark, getTimeBlocks} from "../../core/services/time-block.api.service";
+import {createTimeBlockForPark, getTimeBlocks} from "../../../core/services/time-block.api.service";
 import * as React from "react";
 import IconButton from "@mui/material/IconButton";
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import Typography from "@mui/material/Typography";
 import {Controller, useForm} from "react-hook-form";
-import {BoxContainer} from "./CreatParkStyle";
 import {DateTimePicker, LocalizationProvider} from "@mui/x-date-pickers";
 import {AdapterDateFns} from "@mui/x-date-pickers/AdapterDateFns";
 import frLocale from 'date-fns/locale/fr';
+import {BoxContainer} from "./CreateTimeBlockStyle";
 
 const defaultValues =  {
     power: 0,

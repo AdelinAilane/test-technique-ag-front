@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { FC } from "react";
-import {ElectricityOrigin} from "../../core/enum/electricity-origin.enum";
+import {ElectricityOrigin} from "../../../core/enum/electricity-origin.enum";
 import {useSelector} from "react-redux";
-import {parkListSelector} from "../../state/parkSlice";
+import {parkListSelector} from "../../../state/parkSlice";
 import {SeeMoreButton} from "./ParkListStyle";
 import {Paper, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
-import CreateTimeBlock from "./CreateTimeBlock";
+import CreateTimeBlock from "../CreateTimeBlock/CreateTimeBlock";
 
 export type ParkFilters = { electricityOrigin: ElectricityOrigin }
 

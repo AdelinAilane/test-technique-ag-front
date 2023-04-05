@@ -35,7 +35,6 @@ export const fetchOfferListThunk = createAsyncThunk(
         return offerPaginatedList ;
     });
 
-
 const offerSlice = createSlice({
     name: 'offer',
     initialState,

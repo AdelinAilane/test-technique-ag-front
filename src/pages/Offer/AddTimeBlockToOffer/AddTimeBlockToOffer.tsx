@@ -11,19 +11,19 @@ import {
     TableContainer, TableHead, TableRow,
     TextField
 } from '@mui/material';
-import {BoxContainer} from "./CreateOfferStyle";
+import {BoxContainer} from "../CreateOffer/CreateOfferStyle";
 import {Controller, useForm} from "react-hook-form";
-import {addTimeBlockToOffer, createOffer} from "../../core/services/offer.api.service";
-import {MarketType} from "../../core/enum/market-type.enum";
-import {ElectricityOrigin} from "../../core/enum/electricity-origin.enum";
-import {getTimeBlocks} from "../../core/services/time-block.api.service";
+import {addTimeBlockToOffer, createOffer} from "../../../core/services/offer.api.service";
+import {MarketType} from "../../../core/enum/market-type.enum";
+import {ElectricityOrigin} from "../../../core/enum/electricity-origin.enum";
+import {getTimeBlocks} from "../../../core/services/time-block.api.service";
 import * as React from "react";
 import IconButton from "@mui/material/IconButton";
 import AddIcon from '@mui/icons-material/Add';
 import MoreTimeIcon from '@mui/icons-material/MoreTime';
 import Typography from "@mui/material/Typography";
-import {OfferListOptions} from "./OfferList";
-import {ParkListOptions} from "../Park/ParkList";
+import {OfferListOptions} from "../OfferList/OfferList";
+import {ParkListOptions} from "../../Park/ParkList/ParkList";
 
 interface AddTimeBlockToOfferProps {
     offerId: number,

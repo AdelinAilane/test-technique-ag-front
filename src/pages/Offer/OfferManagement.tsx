@@ -1,7 +1,7 @@
 import {createContext, FC, useEffect, useState} from "react";
 import Typography from "@mui/material/Typography";
-import OfferList, {OfferListOptions} from "./OfferList";
-import CreateOffer from "./CreateOffer";
+import OfferList, {OfferListOptions} from "./OfferList/OfferList";
+import CreateOffer from "./CreateOffer/CreateOffer";
 import {Box, MenuItem, Select, SelectChangeEvent, Stack} from "@mui/material";
 import {ElectricityOrigin} from "../../core/enum/electricity-origin.enum";
 import {fetchOfferListThunk, offerListSelector} from "../../state/offerSlice";

@@ -2,12 +2,11 @@ import {FC, useState} from "react";
 import {Box, Button, FormControl, Grid, InputLabel, MenuItem, Modal, Select, TextField} from '@mui/material';
 import {BoxContainer} from "./CreateOfferStyle";
 import {Controller, useForm} from "react-hook-form";
-import {createOffer} from "../../core/services/offer.api.service";
-import {MarketType} from "../../core/enum/market-type.enum";
+import {createOffer} from "../../../core/services/offer.api.service";
+import {MarketType} from "../../../core/enum/market-type.enum";
 
 import Typography from "@mui/material/Typography";
-import * as React from "react";
-import {OfferListOptions} from "./OfferList";
+import {OfferListOptions} from "../OfferList/OfferList";
 
 interface CreateOfferProps {
     setPageListOptions:  React.Dispatch<React.SetStateAction<OfferListOptions>>
